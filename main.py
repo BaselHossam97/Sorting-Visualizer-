@@ -15,7 +15,7 @@ pygame.mixer.init()
 #sound = pygame.mixer.Sound(r'C:\Users\hp\Downloads\so.wav')
 #sound = pygame.mixer.Sound(r'C:\Users\hp\Downloads\coin_c_02-102844.mp3')
 #sound = pygame.mixer.Sound(r'C:\Users\hp\Downloads\snd_fragment_retrievewav-14728.mp3')
-sound = pygame.mixer.Sound(r'C:\Users\hp\Downloads\whoosh-6316.mp3')
+sound = pygame.mixer.Sound('whoosh-6316.mp3')
 
 # Set up some constants
 WIDTH, HEIGHT = 1500, 700
