@@ -23,10 +23,9 @@ RECT_WIDTH = 10
 
 
 
-# Load the sound
-#sound = pygame.mixer.Sound('swap.wav')
 
-# The height of the rectangles
+
+
 heights = []
 count = 0
 for i in range(150):
@@ -39,7 +38,7 @@ def createArr():
         heights.append(random.randint(50, 690))
     swapped = [False] * len(heights)
 
-# Create the Pygame window
+
 win = pygame.display.set_mode((WIDTH, HEIGHT))
 def playSound(value):
     # Normalize the value to fit inside the volume range
@@ -59,7 +58,7 @@ def swap(lst, i, j):
     lst[i], lst[j] = lst[j], lst[i]
     swapped[i] = swapped[j] = True
 
-    # Wait for 100 milliseconds
+
 
     pygame.time.wait(50)
 def maxHeapify(arr, n, i):
@@ -128,7 +127,7 @@ def selectionSort(arr):
         playSound(arr[i])
         playSound(arr[minindx])
 
-        # Redraw the screen and update display after each swap
+
         display()
 
 def merge(a,p,q,r):
@@ -169,8 +168,7 @@ def merge(a,p,q,r):
         i += 1
         k += 1
 
-        # Copy the remaining elements of R[], if there
-        # are any
+
     while j < n2:
         a[k] = R[j]
         j += 1
@@ -225,21 +223,18 @@ def quickSort(a,p,r):
 
 
 
-# The main function to sort an array of given size
 
 def heapSort(arr):
     n = len(arr)
 
-    # Build a maxheap.
-    # Since last parent will be at ((n//2)-1) we can start at that location.
 
     for i in range(n // 2 - 1, -1, -1):
         maxHeapify(arr, n, i)
 
-    # One by one extract elements
+
 
     for i in range(n - 1, 0, -1):
-        (arr[i], arr[0]) = (arr[0], arr[i])  # swap
+        (arr[i], arr[0]) = (arr[0], arr[i])
         maxHeapify(arr, i, 0)
 
 
