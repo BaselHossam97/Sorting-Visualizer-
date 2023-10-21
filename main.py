@@ -17,7 +17,7 @@ pygame.mixer.init()
 #sound = pygame.mixer.Sound(r'C:\Users\hp\Downloads\snd_fragment_retrievewav-14728.mp3')
 sound = pygame.mixer.Sound('whoosh-6316.mp3')
 
-# Set up some constants
+
 WIDTH, HEIGHT = 1500, 700
 RECT_WIDTH = 10
 
@@ -41,19 +41,19 @@ def createArr():
 
 win = pygame.display.set_mode((WIDTH, HEIGHT))
 def playSound(value):
-    # Normalize the value to fit inside the volume range
-    normalized_value = value / 690 # Assuming max_value is the highest possible value
+
+    normalized_value = value / 690 
     channel = pygame.mixer.find_channel(True)
 
-    # Set the sound volume to the normalized value
+
     sound.set_volume(normalized_value)
 
-    # Play the sound
+
     channel.play(sound)
 
-    # Wait for a moment
+
     pygame.time.wait(5)
-# swap function with delay
+
 def swap(lst, i, j):
     lst[i], lst[j] = lst[j], lst[i]
     swapped[i] = swapped[j] = True
@@ -62,40 +62,33 @@ def swap(lst, i, j):
 
     pygame.time.wait(50)
 def maxHeapify(arr, n, i):
-    largest = i  # Initialize largest as root
-    l = 2 * i + 1  # left = 2*i + 1
-    r = 2 * i + 2  # right = 2*i + 2
+    largest = i  
+    l = 2 * i + 1  
+    r = 2 * i + 2  
 
-    # See if left child of root exists and is
-    # greater than root
+
 
     if l < n and arr[i] < arr[l]:
         largest = l
 
-    # See if right child of root exists and is
-    # greater than root
 
     if r < n and arr[largest] < arr[r]:
         largest = r
 
-    # Change root, if needed
+
 
     if largest != i:
-        (arr[i], arr[largest]) = (arr[largest], arr[i])  # swap
+        (arr[i], arr[largest]) = (arr[largest], arr[i]) 
         swapped[i] = swapped[largest] = True
         display()
         playSound(arr[i])
         playSound(arr[largest])
 
 
-        #playSound(arr[i])
-        #playSound(arr[largest])
 
 
 
 
-
-        # Heapify the root.
 
         maxHeapify(arr, n, largest)
 
@@ -240,7 +233,6 @@ def heapSort(arr):
 
 
 
-# Main loop
 while True:
 
     for event in pygame.event.get():
@@ -250,7 +242,6 @@ while True:
 
     win.fill((255, 255, 255))
 
-    # Draw rectangles
     display()
     if(count == 0):
         quickSort(heights,0,149)
